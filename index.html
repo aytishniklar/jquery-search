@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Jquery search bar">
+    <meta name="author" content="Husan Muminov">
+    <title>Search bar using HTML & JQuery</title>
+    <script src="assets/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <input type="text" id="search" placeholder="Qidirish...">
+    <br>
+    <ul id="list">
+        <li>Alijonov O'tkir</li>
+        <li>Zayniddinova Zuhra</li>
+        <li>Orisbayeva Diyora</li>
+        <li>Baymatova Mubina</li>
+        <li>G'ofurova Intizor</li>
+        <li>Rahimjonova Sevinch</li>
+        <li>Abduqahhorov Rahmatullo</li>
+        <li>Imomova Sevara</li>
+        <li>Alijonov Yoqubjon</li>
+        <li>Shovkatov Xojakbar</li>
+        <li>Shavkatova Zulfiya</li>
+        <li>Qo'rg'onova Shahzoda</li>
+        <li>Murodov Abduqodir</li>
+    </ul>
+
+    <script>
+        $(document).ready(function(){
+            $("#search").on("keyup", function(){
+                var value = $(this).val().toLowerCase();
+                $("#list li").filter(function(){
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+        });
+    </script>
+</body>
+</html>
